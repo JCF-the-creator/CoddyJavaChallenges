@@ -1,0 +1,62 @@
+package NestedLoop;
+
+import java.util.Scanner;
+
+public class nestedLoop2 {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("This program make a pattern using *");
+        System.out.println();
+
+        while (true) {
+
+                System.out.println();
+                System.out.println("Enter the length: ");
+                int width = scanner.nextInt();
+                System.out.println();
+                System.out.println("Enter the height: ");
+                int height = scanner.nextInt();
+
+                if(height == 0 || width == 0){
+                    System.out.println();
+                    System.out.println("No pattern with 0 values");
+                    System.out.println();
+                } else {
+                    System.out.println();
+                    System.out.println("Pattern: ");
+                    System.out.println();
+                    for(int y = 0; y<height;y++){
+                        for(int x = 0; x<width;x++){
+                            System.out.print("*");
+                        }
+                        System.out.println();
+                    }
+                }
+
+                String closeProgram = "";
+                while (true) {
+                    System.out.println();
+                    System.out.println("----------------------");
+                    System.out.println("Continue? Y/N");
+                    closeProgram = scanner.next();
+                    
+                    if (closeProgram.equalsIgnoreCase("n")) {
+                        break;
+                    }
+                    if (closeProgram.equalsIgnoreCase("y")) {
+                        break;
+                    }
+                    System.out.println();
+                    System.out.println("Invalid Input");
+                }
+
+                if (closeProgram.equalsIgnoreCase("n")) {
+                    System.out.println("closing program...");
+                    break;
+                }
+        }
+        scanner.close();
+    }
+}
